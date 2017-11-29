@@ -4,8 +4,12 @@ self.addEventListener('fetch', function (event) {
         .then(function (response) {
             if (response) {
                 return response;
+            } else {
+                if (event.request.url.endsWith('jpg')) {
+                    return 'https://cn.vuejs.org/images/logo.png';
+                }
+                return fetch(event.request);
             }
-            return 'https://cn.vuejs.org/images/logo.png';
         })
     );
 });
