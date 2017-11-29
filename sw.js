@@ -10,6 +10,9 @@ self.addEventListener('fetch', function (event) {
                 }
                 return fetch(event.request);
             }
+        }).catch(function (err) {
+            console.log(err)
+            return event.respondWith('https://cn.vuejs.org/images/logo.png');
         })
     );
 });
