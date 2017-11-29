@@ -6,7 +6,7 @@ self.addEventListener('fetch', function (event) {
                 return response;
             } else {
                 if (event.request.url.endsWith('jpg')) {
-                    return 'https://cn.vuejs.org/images/logo.png';
+                    return event.respondWith('https://cn.vuejs.org/images/logo.png');
                 }
                 return fetch(event.request);
             }
