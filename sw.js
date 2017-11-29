@@ -6,6 +6,6 @@ self.addEventListener('fetch', function (event) {
                 return response;
             }
             return 'https://cn.vuejs.org/images/logo.png';
-        });
+        })
     );
 });
